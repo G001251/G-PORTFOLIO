@@ -1,0 +1,453 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #000000;
+    color: #E6F0FA;
+    font-family: sans-serif;
+    line-height: 1.6;
+    position: relative;
+    overflow-x: hidden;
+}
+
+body::before,
+body::after {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    opacity: 0.8;
+}
+
+body::before {
+    background: linear-gradient(45deg, #000000 20%, #1E3A8A 40%, #3B82F6 60%, #000000 80%);
+    background-size: 600% 600%;
+    animation: flowWave 10s ease-in-out infinite;
+}
+
+body::after {
+    background: linear-gradient(135deg, #000000 20%, #1E40AF 40%, #60A5FA 60%, #000000 80%);
+    background-size: 500% 500%;
+    animation: flowWave 14s ease-in-out infinite reverse;
+}
+
+h1, h2, h3, #top-section nav a, #footer p {
+    text-shadow: 
+        0 0 3px #3B82F6,
+        0 0 6px #60A5FA,
+        0 0 8px #93C5FD;
+}
+
+#top-section {
+    background: rgba(30, 58, 138, 0.3);
+    padding: 2rem 1.5rem;
+    text-align: center;
+    border-bottom: 2px solid #3B82F6;
+    position: relative;
+}
+
+#top-section h1 {
+    font-size: 3rem;
+    font-weight: bold;
+    color: #E6F0FA;
+    margin-bottom: 0.5rem;
+}
+
+#top-section .slogan {
+    font-size: 1.2rem;
+    color: #93C5FD;
+    margin-bottom: 1rem;
+}
+
+#top-section nav {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap; 
+}
+
+#top-section nav a {
+    color: #E6F0FA;
+    text-decoration: none;
+    font-size: 1.2rem;
+    transition: color 0.3s;
+}
+
+#top-section nav a:hover {
+    color: #93C5FD;
+}
+@media (max-width: 600px) {
+    #top-section {
+        padding: 1rem;
+    }
+    #top-section h1 {
+        font-size: 2rem;
+    }
+    #top-section .slogan {
+        font-size: 1rem;
+    }
+    #top-section nav {
+        gap: 1rem;
+    }
+    #top-section nav a {
+        font-size: 1rem;
+    }
+}
+
+@keyframes flowWave {
+    0% {
+        background-position: 0% 0%;
+    }
+    50% {
+        background-position: 100% 100%;
+    }
+    100% {
+        background-position: 0% 0%;
+    }
+}
+
+#home {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 1.5rem;
+    text-align: center;
+}
+
+@media (min-width: 768px) {
+    #home {
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        gap: 2rem;
+    }
+}
+
+#home img {
+    width: 100%;
+    max-width: 300px;
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+}
+
+#home > div:first-child {
+    margin-left: 0;
+}
+
+#home > div {
+    text-align: center;
+    margin-top: 1.5rem;
+}
+
+@media (min-width: 768px) {
+    #home > div {
+        width: 50%;
+        text-align: center;
+        padding-left: 0;
+        margin-top: 0;
+        margin-left: 0;
+    }
+}
+
+h2 {
+    font-size: 2.25rem;
+    font-weight: bold;
+    color: #E6F0FA;
+    text-align: center;
+    margin-bottom: 2.5rem;
+}
+
+p {
+    font-size: 1.125rem;
+    margin-top: 1rem;
+}
+
+#home .social-links {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+#home .social-links a {
+    color: #93C5FD;
+    text-decoration: none;
+}
+
+#home .social-links a:hover {
+    text-decoration: underline;
+}
+
+#home .stats {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+@media (min-width: 768px) {
+    #home .stats {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+#home .stats div {
+    text-align: center;
+}
+
+#home .stats p:first-child {
+    font-size: 1.875rem;
+    font-weight: bold;
+    color: #93C5FD;
+}
+
+#home .get-in-touch-btn {
+    display: inline-block;
+    margin-top: 1.5rem;
+    padding: 0.5rem 1.5rem;
+    background: transparent;
+    border: 1px solid #93C5FD;
+    color: #93C5FD;
+    border-radius: 9999px;
+    text-decoration: none;
+    transition: all 0.3s;
+}
+
+#home .get-in-touch-btn:hover {
+    background-color: #93C5FD;
+    color: #1E3A8A;
+}
+@media (max-width: 600px) {
+    #home {
+        padding: 1rem;
+    }
+    h2 {
+        font-size: 1.75rem;
+        margin-bottom: 1.5rem;
+    }
+    #home p {
+        font-size: 1rem;
+    }
+    #home .stats {
+        gap: 1rem;
+    }
+    #home .stats p:first-child {
+        font-size: 1.5rem;
+    }
+    #home .get-in-touch-btn {
+        padding: 0.5rem 1rem;
+        font-size: 0.9rem;
+    }
+}
+
+#about {
+    padding: 3rem 1.5rem;
+    max-width: 80rem;
+    margin: 0 auto;
+}
+
+#about h2 {
+    font-size: 2.5rem;
+}
+
+.about-container {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    align-items: center;
+}
+
+@media (min-width: 768px) {
+    .about-container {
+        flex-direction: row;
+        align-items: flex-start;
+    }
+}
+
+.about-image img {
+    width: 100%;
+    max-width: 300px;
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+}
+
+.about-content {
+    flex: 1;
+}
+
+.about-content p {
+    font-size: 1.25rem;
+    text-align: justify;
+}
+@media (max-width: 600px) {
+    #about {
+        padding: 2rem 1rem;
+    }
+    #about h2 {
+        font-size: 2rem;
+    }
+    .about-content p {
+        font-size: 1rem;
+    }
+}
+
+#skills, #projects, #services, #resume, #contact {
+    padding: 4rem 1.5rem;
+    text-align: center;
+}
+
+#about .grid, #skills .grid, #projects .grid, #services .grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    max-width: 80rem;
+    margin: 0 auto;
+}
+
+@media (min-width: 768px) {
+    #about .grid, #skills .grid, #projects .grid, #services .grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 1024px) {
+    #projects .grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+.card-bg {
+    background: rgba(147, 197, 253, 0.1);
+    backdrop-filter: blur(10px);
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+    max-width: 300px;
+    width: 100%; 
+    margin: 0 auto; 
+}
+
+.card-bg h3 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #E6F0FA;
+}
+
+.card-bg p {
+    margin-top: 0.5rem;
+}
+
+.card-bg.highlight {
+    border: 2px solid #3B82F6;
+    background: rgba(147, 197, 253, 0.2);
+}
+@media (max-width: 600px) {
+    #skills, #projects, #services, #resume, #contact {
+        padding: 2rem 1rem;
+    }
+    .card-bg {
+        padding: 1rem;
+    }
+    .card-bg h3 {
+        font-size: 1.1rem;
+    }
+    .card-bg p {
+        font-size: 0.9rem;
+    }
+}
+
+#resume {
+    text-align: center;
+}
+
+.resume-content {
+    max-width: 50rem;
+    margin: 0 auto;
+}
+
+.resume-content h3 {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #E6F0FA;
+}
+
+.resume-content p {
+    font-size: 1.125rem;
+}
+
+.resume-content h4 {
+    font-size: 1.5rem;
+    margin-top: 1.5rem;
+    color: #93C5FD;
+}
+
+.download-btn {
+    display: inline-block;
+    margin-top: 1.5rem;
+    padding: 0.5rem 1.5rem;
+    background: transparent;
+    border: 1px solid #93C5FD;
+    color: #93C5FD;
+    border-radius: 9999px;
+    text-decoration: none;
+    transition: all 0.3s;
+}
+
+.download-btn:hover {
+    background-color: #93C5FD;
+    color: #1E3A8A;
+}
+
+@media (max-width: 600px) {
+    .resume-content h3 {
+        font-size: 1.75rem;
+    }
+    .resume-content h4 {
+        font-size: 1.25rem;
+    }
+    .resume-content p {
+        font-size: 1rem;
+    }
+    .download-btn {
+        padding: 0.5rem 1rem;
+        font-size: 0.9rem;
+    }
+}
+
+#contact .social-links {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+#contact .social-links a {
+    color: #93C5FD;
+    text-decoration: none;
+}
+
+#contact .social-links a:hover {
+    text-decoration: underline;
+}
+
+#footer {
+    background: rgba(30, 58, 138, 0.3);
+    padding: 2rem 1.5rem;
+    text-align: center;
+    border-top: 2px solid #3B82F6;
+}
+@media (max-width: 600px) {
+    #footer {
+        padding: 1rem;
+    }
+    #footer p {
+        font-size: 0.9rem;
+    }
+}
